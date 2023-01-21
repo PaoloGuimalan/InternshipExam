@@ -108,7 +108,7 @@ function IndvMail({data, callback, checked}) {
             <div id='div_content_preview'>
                 <div id='div_sender_prev_container'>
                     <div id='div_sender_prev'>
-                        <span id='div_sender_initials'>TA</span>
+                        <span id='div_sender_initials'>{data.sender.name.split(" ")[0].split("")[0]}{data.sender.name.split(" ")[1].split("")[0]}</span>
                     </div>
                 </div>
                 <div id='div_content_prev_details_container'>
