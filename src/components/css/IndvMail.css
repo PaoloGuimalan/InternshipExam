@@ -1,0 +1,263 @@
+#div_indvmail{
+    background-color: transparent;
+    width: calc(95% - 20px);
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    min-height: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px grey;
+}
+
+#div_mail_preview{
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    border-radius: 5px;
+    border-bottom: solid 0px grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#div_mail_navs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn_indv_mail_nav{
+    background-color: transparent;
+    border: none;
+    color: grey;
+    cursor: pointer;
+    width: 20px;
+}
+
+#div_online_indicator{
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: green;
+}
+
+#div_date_prev{
+    background-color: rgb(241, 241, 241);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.span_date_prev_labels{
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+}
+
+.span_date_prev_labels:first-of-type{
+    font-size: 17px;
+}
+
+.span_date_prev_labels:nth-of-type(2n){
+    font-size: 10px;
+}
+
+#div_content_preview{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+
+#div_sender_prev_container{
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_sender_prev{
+    background-color: grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div_sender_initials{
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+#div_content_prev_details_container{
+    background-color: transparent;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#span_subject_label{
+  color: rgb(75, 75, 75);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#div_content_main_container{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+#span_sender_label{
+  color: rgb(75, 75, 75);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#span_content_label{
+    color: rgb(75, 75, 75);
+    font-size: 15px;
+}
+
+#span_date_label{
+    color: rgb(75, 75, 75);
+    font-size: 15px;
+}
+
+#span_attachments_label{
+    color: blue;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider{
+    font-size: 12px;
+    color: gray;
+}
+
+#div_time_expand_container{
+    width: 120px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+#span_time_label{
+    color: orange;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+#btn_expand{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_content_expand_main{
+    overflow-y: hidden;
+    height: 0px;
+    width: 100%;
+}
+
+#div_tags_preview{
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+.span_tags{
+    background-color: rgb(207, 207, 255);
+    color: blue;
+    border: solid 1px blue;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+#div_expanded_content_header{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+#div_subject_date_container{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-width: 150px;
+}
+
+#div_tags_container{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background-color: transparent;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+#span_subject_content{
+    color: rgb(75, 75, 75);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#span_date_content{
+    color: rgb(75, 75, 75);
+    font-size: 15px;
+}
+
+#div_main_content_container{
+    background-color: transparent;
+    padding-bottom: 30px;
+}
+
+#p_content_main_holder{
+    font-size: 15px;
+    color: rgb(75, 75, 75);
+}

@@ -1,38 +1,111 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: transparent;
+  height: 100%;
+  position: absolute;
   display: flex;
   flex-direction: column;
+}
+
+#div_header{
+  width: calc(100% - 70px);
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 50px;
+  align-items: center;
+  border-bottom: solid 1px grey;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#div_input_container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn_navigations{
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
+  border-radius: 5px;
+  border: solid 1px;
+  height: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn_navigations:first-of-type{
+  color: green;
+  background-color: rgb(221, 255, 221);
+  /* borde */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn_navigations:nth-of-type(2n){
+  color: rgb(75, 75, 75);
+  /* borde */
+}
+
+.btn_navigations:nth-of-type(3n){
+  color: red;
+  background-color: rgb(248, 215, 215);
+  /* borde */
+}
+
+#div_page_nav_container{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.btn_page_navs{
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: rgb(75, 75, 75);
+}
+
+#span_page_ind{
+  font-size: 12px;
+  color: rgb(75, 75, 75);
+}
+
+#p_label{
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(75, 75, 75);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#div_mail_list_container{
+  width: calc(100% - 30px);
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  align-items: center;
+  gap: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+#div_container_listing{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
