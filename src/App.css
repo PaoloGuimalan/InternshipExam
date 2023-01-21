@@ -1,6 +1,7 @@
 .App {
   background-color: transparent;
   height: 100%;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -83,8 +84,8 @@
   font-size: 15px;
   font-weight: bold;
   color: rgb(75, 75, 75);
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 #div_mail_list_container{

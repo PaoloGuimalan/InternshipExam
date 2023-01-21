@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../css/IndvMail.css'
 import DragIcon from '@material-ui/icons/DragIndicator'
 import AttachIcon from '@material-ui/icons/AttachFile'
@@ -7,9 +7,14 @@ import ForwardIcon from '@material-ui/icons/KeyboardArrowRight'
 import DownwardIcon from '@material-ui/icons/KeyboardArrowDown'
 import { motion } from 'framer-motion'
 
-function IndvMail({data}) {
+function IndvMail({data, callback, checked}) {
 
   const [expand, setexpand] = useState(false)
+  const [checkedStatusIndv, setcheckedStatusIndv] = useState(false);
+
+  useEffect(() => {
+    setcheckedStatusIndv(checked)
+  },[checked])
 
   const msToTime = (duration, display) => {
     if(display == "preview"){
@@ -94,7 +99,7 @@ function IndvMail({data}) {
         <div id='div_mail_preview'>
             <div id='div_mail_navs'>
                 <button className='btn_indv_mail_nav'><DragIcon /></button>
-                <input type='checkbox' />
+                <input type='checkbox' onChange={(e) => { callback(data._id, e.target.checked) }} onClick={() => { setcheckedStatusIndv(!checkedStatusIndv) }} checked={checkedStatusIndv}/>
                 <div id='div_online_indicator' />
                 <div id='div_date_prev'>
                     {msToTime(Date.parse(data.date), "miniPrev")}

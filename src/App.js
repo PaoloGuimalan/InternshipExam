@@ -12,29 +12,60 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [mails, setmails] = useState([]);
+  const [checkedmail, setcheckedmail] = useState([]);
+  const [checkAllState, setcheckAllState] = useState(false);
+  const [maincheck, setmaincheck] = useState(false);
 
   useEffect(() => {
     // console.log(sampledata)
     setmails(sampledata)
   },[])
 
-  const deleteMail = () => {
+  const deleteMailEnlist = (id, bool) => {
     // setmails(mails.filter())
+    // console.log(bool)
+    if(bool){
+      setcheckedmail([
+        ...checkedmail,
+        id
+      ])
+      // console.log(checkedmail)
+    }
+    else{
+      setcheckedmail(checkedmail.filter(chkml => (chkml != id)))
+    }
+  }
+
+  const deleteMail = () => {
+    setmails(mails.filter(mls => !checkedmail.includes(mls._id)))
+    setcheckedmail([])
+    setmaincheck(false)
+    setcheckAllState(false)
+  }
+
+  const checkAll = () => {
+    setcheckAllState(!checkAllState)
+    mails.map((chk, i) => {
+      setcheckedmail((oldArray) => [...oldArray, chk._id])
+    })
+    if(checkAllState){
+      setcheckedmail([])
+    }
   }
 
   return (
     <div className="App">
       <div id='div_header'>
         <div id='div_input_container'>
-          <input type='checkbox' />
+          <input type='checkbox' onChange={() => { checkAll() }} onClick={(e) => { setmaincheck(!maincheck) }} checked={maincheck}/>
           <button className='btn_navigations'>SAVE <SaveIcon style={{fontSize: "12px"}} /></button>
           <button className='btn_navigations'>MANAGE FILTERS <FilterIcon style={{fontSize: "12px"}} /></button>
           <span>|</span>
-          <button className='btn_navigations'>DELETE <DeleteIcon style={{fontSize: "12px"}} /></button>
+          <button className='btn_navigations' onClick={() => { deleteMail() }}>DELETE <DeleteIcon style={{fontSize: "12px"}} /></button>
         </div>
         <div id='div_page_nav_container'>
           <button className='btn_page_navs'><PrevIcon /></button>
-          <span id='span_page_ind'>50 of 100</span>
+          <span id='span_page_ind'>{checkedmail.length} of {mails.length}</span>
           <button className='btn_page_navs'><NextIcon /></button>
         </div>
       </div>
@@ -43,7 +74,7 @@ function App() {
         <div id='div_container_listing'>
             {mails.map((items, i) => {
               return(
-                <IndvMail key={i} data={items} />
+                <IndvMail key={items._id} data={items} callback={(id, bool) => { deleteMailEnlist(id, bool) }} checked={checkAllState} />
               )
             })}
         </div>
